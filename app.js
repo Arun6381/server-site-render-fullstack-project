@@ -9,6 +9,8 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
+
 const AppError = require('./utils/apperror');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
@@ -18,8 +20,20 @@ const viewRouter = require('./routes/viewRoutes');
 const bookingRouter = require('./routes/bookingRoute');
 
 const app = express();
+
+app.enable('trust proxy');
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
+
+app.use(cors());
+// app.use(
+//   cors({
+//     origin: ['http://localhost:3000'],
+//     credentials: true
+//   })
+// );
+app.options('*', cors());
 
 //security http headers
 app.use(helmet());

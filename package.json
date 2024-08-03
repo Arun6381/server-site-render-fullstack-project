@@ -17,6 +17,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "core-js": "^3.37.1",
+    "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.19.2",
     "express-mongo-sanitize": "^2.2.0",
@@ -53,6 +54,6 @@
     "prettier": "^1.19.1"
   },
   "engines": {
-    "node": ">=16.14.2"
+    "node": "^16"
   }
 }
