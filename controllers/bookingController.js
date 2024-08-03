@@ -50,7 +50,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       session
     });
   } catch (error) {
-    console.error('Error creating Stripe session:', error);
+    // console.error('Error creating Stripe session:', error);
     res.status(500).json({
       status: 'error',
       message: 'There was an error creating the Stripe session'
